@@ -1,0 +1,64 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Inter, "Segoe UI", Tahoma, sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+}
+body { margin: 0; min-height: 100vh; background: linear-gradient(135deg,#f5f8ff 0%,#eef3f9 100%); }
+.container { width: min(1100px, 92%); margin: 0 auto; padding: 42px 0 70px; }
+.hero { display:flex; justify-content:space-between; gap:30px; align-items:flex-end; margin-bottom:24px; }
+.eyebrow { margin:0 0 8px; font-size:12px; font-weight:800; letter-spacing:2px; color:#5c6b82; }
+h1 { margin:0; font-size:clamp(28px,5vw,46px); line-height:1.08; letter-spacing:-1px; }
+.subtitle { color:#667085; max-width:650px; line-height:1.6; margin:14px 0 0; }
+.price-card { display:grid; grid-template-columns:repeat(3,1fr); min-width:330px; background:#fff; border:1px solid #e5eaf2; border-radius:18px; padding:16px; box-shadow:0 12px 30px rgba(20,40,80,.06); }
+.price-card div { padding:5px 12px; border-right:1px solid #e8edf4; }
+.price-card div:last-child { border:0; }
+.price-card span,.price-card strong { display:block; }
+.price-card span { color:#7a8799; font-size:12px; }
+.price-card strong { font-size:22px; margin-top:3px; }
+.card { background:#fff; border:1px solid #e4e9f1; border-radius:20px; padding:25px; box-shadow:0 12px 30px rgba(20,40,80,.05); margin-bottom:20px; }
+.section-title { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:20px; }
+.section-title h2,.rules h2 { margin:0; font-size:20px; }
+.section-title p { margin:5px 0 0; color:#7b8798; font-size:14px; }
+.badge { background:#edf3ff; color:#315fca; padding:8px 12px; border-radius:999px; font-size:13px; font-weight:700; white-space:nowrap; }
+.form-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+label span { display:block; font-size:14px; font-weight:700; margin-bottom:8px; }
+input { width:100%; padding:14px 15px; border:1px solid #d8e0eb; border-radius:12px; outline:none; font-size:16px; transition:.2s; }
+input:focus { border-color:#5d7fd4; box-shadow:0 0 0 4px #eaf0ff; }
+small { display:block; color:#8994a5; margin-top:7px; }
+.primary,.secondary { border:0; border-radius:12px; padding:13px 18px; font-weight:800; cursor:pointer; font-size:14px; }
+.primary { margin-top:20px; background:#172033; color:white; }
+.primary:hover { transform:translateY(-1px); }
+.secondary { background:#eef2f7; color:#46546b; }
+.error { min-height:20px; margin-top:12px; color:#c62828; font-size:13px; font-weight:600; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:15px; margin-bottom:20px; }
+.stat { background:#fff; border:1px solid #e4e9f1; border-radius:16px; padding:18px; }
+.stat span { color:#7c8797; font-size:13px; }
+.stat strong { display:block; font-size:27px; margin-top:5px; }
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; min-width:650px; }
+th,td { padding:14px 12px; text-align:left; border-bottom:1px solid #edf0f5; }
+th { color:#7b8798; font-size:12px; text-transform:uppercase; }
+td { font-size:14px; }
+.delete { border:0; background:#fff0f0; color:#c23c3c; padding:7px 10px; border-radius:8px; cursor:pointer; }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.result-card h2,.commission-card h2 { font-size:40px; margin:8px 0; }
+.result-card p:last-child,.commission-card p:last-child { color:#7c8797; margin:0; }
+.commission-card { background:#172033; color:#fff; border-color:#172033; }
+.commission-card .eyebrow,.commission-card p:last-child { color:#bdc7d8; }
+.rules { margin-top:20px; }
+.rule-list { margin-top:15px; display:grid; gap:10px; }
+.rule-list div { display:flex; justify-content:space-between; gap:20px; padding:14px; background:#f7f9fc; border-radius:10px; font-size:14px; }
+.rule-list span { color:#68768a; text-align:right; }
+@media (max-width: 800px) {
+  .hero { flex-direction:column; align-items:stretch; }
+  .price-card { min-width:0; }
+  .form-grid,.stats,.result-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .container { width:94%; padding-top:25px; }
+  .form-grid,.stats,.result-grid { grid-template-columns:1fr; }
+  .card { padding:18px; }
+  .rule-list div { flex-direction:column; gap:6px; }
+  .rule-list span { text-align:left; }
+}

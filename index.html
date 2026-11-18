@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commission System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SALES COMMISSION</p>
+        <h1>โปรแกรมคำนวณยอดขายและค่าคอมมิชชั่น</h1>
+        <p class="subtitle">บันทึกจำนวนสินค้าแต่ละรอบ แล้วระบบคำนวณยอดขายและ Commission ให้อัตโนมัติ</p>
+      </div>
+      <div class="price-card">
+        <div><span>Locks</span><strong>$45</strong></div>
+        <div><span>Stocks</span><strong>$30</strong></div>
+        <div><span>Barrels</span><strong>$25</strong></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <h2>เพิ่มข้อมูลการขาย</h2>
+          <p>กรอกข้อมูลตามช่วงที่กำหนด</p>
+        </div>
+        <span class="badge" id="roundBadge">รอบที่ 1</span>
+      </div>
+
+      <form id="saleForm">
+        <div class="form-grid">
+          <label>
+            <span>Locks</span>
+            <input id="locks" type="number" min="1" max="70" step="1" placeholder="1 - 70" required>
+            <small>จำนวน 1–70 ชิ้น</small>
+          </label>
+          <label>
+            <span>Stocks</span>
+            <input id="stocks" type="number" min="1" max="80" step="1" placeholder="1 - 80" required>
+            <small>จำนวน 1–80 ชิ้น</small>
+          </label>
+          <label>
+            <span>Barrels</span>
+            <input id="barrels" type="number" min="1" max="90" step="1" placeholder="1 - 90" required>
+            <small>จำนวน 1–90 ชิ้น</small>
+          </label>
+        </div>
+        <div id="error" class="error"></div>
+        <button type="submit" class="primary">+ บันทึกข้อมูลรอบนี้</button>
+      </form>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>Locks รวม</span><strong id="totalLocks">0</strong></div>
+      <div class="stat"><span>Stocks รวม</span><strong id="totalStocks">0</strong></div>
+      <div class="stat"><span>Barrels รวม</span><strong id="totalBarrels">0</strong></div>
+      <div class="stat"><span>จำนวนรอบ</span><strong id="roundCount">0</strong></div>
+    </section>
+
+    <section class="card table-card">
+      <div class="section-title">
+        <div>
+          <h2>รายการที่บันทึก</h2>
+          <p id="emptyText">ยังไม่มีข้อมูลการขาย</p>
+        </div>
+        <button id="clearBtn" class="secondary" type="button">ล้างข้อมูลทั้งหมด</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>รอบ</th><th>Locks</th><th>Stocks</th><th>Barrels</th><th>ยอดขาย</th><th>จัดการ</th></tr>
+          </thead>
+          <tbody id="salesTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="result-grid">
+      <div class="card result-card">
+        <p class="eyebrow">TOTAL SALES</p>
+        <h2 id="sales">$0.00</h2>
+        <p>ยอดขายรวมจากข้อมูลทั้งหมด</p>
+      </div>
+      <div class="card commission-card">
+        <p class="eyebrow">COMMISSION</p>
+        <h2 id="commission">$0.00</h2>
+        <p id="commissionRule">ยังไม่มีข้อมูลสำหรับคำนวณ</p>
+      </div>
+    </section>
+
+    <section class="card rules">
+      <h2>เงื่อนไข Commission</h2>
+      <div class="rule-list">
+        <div><b>ยอดขายน้อยกว่า $1,000</b><span>10% ของยอดขาย</span></div>
+        <div><b>ยอดขาย $1,000 ถึงน้อยกว่า $1,800</b><span>10% ของ $1,000 แรก + 15% ของส่วนที่เกิน $1,000</span></div>
+        <div><b>ยอดขายตั้งแต่ $1,800 ขึ้นไป</b><span>10% ของ $1,000 + 15% ของ $800 + 20% ของส่วนที่เกิน $1,800</span></div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
